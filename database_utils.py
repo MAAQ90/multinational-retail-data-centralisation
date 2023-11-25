@@ -26,9 +26,9 @@ class DatabaseConnector:
   def init_db_engine(self, cred):
     DATABASE_TYPE = 'postgresql'
     DBAPI = 'psycopg2'
-    engine = create_engine(f"{'postgresql'}+{'pyscopg2'}://{cred['RDS_USER']}:{cred['RDS_PASSWORD']}@{cred['RDS_HOST']}:{cred['RDS_PORT']}/{cred['RDS_DATABASE']}")
+    engine = create_engine(f"{'postgresql'}+{'psycopg2'}://{cred['RDS_USER']}:{cred['RDS_PASSWORD']}@{cred['RDS_HOST']}:{cred['RDS_PORT']}/{cred['RDS_DATABASE']}")
     return engine
 
   def list_db_tables(self, engine):
     inspector = inspect(engine)
-    inspector.get_table_names()
+    return inspector.get_table_names()
