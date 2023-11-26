@@ -12,5 +12,29 @@ import pandas as pd
 class DataCleaning:
 
   # contruct class
-  def __init__(self, p1, p2):
+
+  def __init__(self):
+    pass
+
+  # user data cleaning function
+
+  def clean_user_data(self, df):
+    # Remove the index column (due to duplication):
+    df.drop(columns = ['index'], inplace=True)
+
+    # Uniform reformatting of dates columns, set to datetime type, and remove those with missing data:
+    df['date_of_birth'] = pd.to_datetime(df['date_of_birth'], errors = 'coerce')
+    df['join_date']     = pd.to_datetime(df['join_date'], errors = 'coerce')
+    df                  = df.dropna(subset=['date_of_birth', 'join_date'], how='all')
+
+    # Uniform reformatting of phone numbers:
+    df.loc[:, "phone_number"] = df["phone_number"].str.replace(r'[^\d+()-]', '', regex=True)
+    df.loc[:, "phone_number"] = df["phone_number"].str.strip().str.replace(r'\s+', ' ', regex=True)
+
+    return df
+
+  def clean_card_data(self):
+    pass
+
+  def clean_store_data(self):
     pass
