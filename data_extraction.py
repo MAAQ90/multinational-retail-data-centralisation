@@ -13,6 +13,7 @@ from sqlalchemy import create_engine
 from sqlalchemy import inspect
 import tabula
 import requests
+import boto3
 
 class DataExtractor:
 
@@ -34,7 +35,7 @@ class DataExtractor:
     url = 'https://aqj7u5id95.execute-api.eu-west-1.amazonaws.com/prod/number_stores'
     header = self.x_api_key()
     response = requests.get(url, headers=header)
-    return response.json()['number_of_stores']
+    return response.json()['number_stores']
 
   def retrieve_stores_data(self, number_of_stores):
     df_storesdata = []
@@ -44,3 +45,8 @@ class DataExtractor:
       response = requests.get(url, headers=header)
       df_storesdata.append(pd.json_normalize(response.json()))
     return pd.concat(df_storesdata)
+
+  def extract_from_s3(self):
+    s3 = boto3.client('s3')
+    response = s3.get_object(Bucket = 'data-handling-public', Key = 'products.csv')
+    return pd.read_csv(response['Body'])
