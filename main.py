@@ -1,6 +1,16 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
 import database_utils
 import data_extraction
 import data_cleaning
+
+
+# In[2]:
+
 
 # **************
 # INITIALISATION
@@ -17,6 +27,10 @@ table_name 	= my_instance.list_db_tables(db_engine)
 
 print(f'table_name: {table_name}')
 
+
+# In[ ]:
+
+
 # *********
 # USER DATA
 # *********
@@ -24,9 +38,7 @@ print(f'table_name: {table_name}')
 # EXTRACT
 
 df_userdata	= my_data_extract.read_rds_table(db_engine, table_name[1])
-
-print(df_userdata.info())
-print(df_userdata.head())
+df_userdata.head()
 
 # CLEAN
 
@@ -34,12 +46,12 @@ df_userdata	= my_data_clean.clean_user_data(df_userdata)
 
 # OUTPUT
 
-print(df_userdata.info())
-print(df_userdata.head())
-
+df_userdata.head()
 my_instance.upload_to_db(df_userdata, 'dim_users', db_engine)
 
-exit()
+
+# In[ ]:
+
 
 # *********
 # CARD DATA 
@@ -49,6 +61,11 @@ df_carddata	= my_data_extract.retrieve_pdf_data("https://data-handling-public.s3
 print(df_carddata.head())
 
 # T4_S3 CLEAN df_carddata
+
+
+
+# In[ ]:
+
 
 # ***********
 # STORES DATA
@@ -62,6 +79,10 @@ print(f'number of stores:{number_of_stores}')
 # T5_S4 CLEAN df_storedata
 
 # T5_S4 UPLOAD df_storedata in dim_store_details
+
+
+# In[ ]:
+
 
 # *************
 # PRODUCTS DATA
