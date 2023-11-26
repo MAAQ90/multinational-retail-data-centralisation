@@ -32,3 +32,6 @@ class DatabaseConnector:
   def list_db_tables(self, engine):
     inspector = inspect(engine)
     return inspector.get_table_names()
+
+  def upload_to_db(self, df, table_name, engine):
+    df.to_sql(table_name, engine, if_exists='replace')
