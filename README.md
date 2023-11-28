@@ -17,8 +17,15 @@ In the second phase
 
 ## 2. Processing
 
-DATA CATEGORY           CONTENTS                                          SOURCE
-Users data              Name; Date of Birth; Company; Email; Address      AWS Cloud (Postgres Database)
-Payment card data       Card number; Expiry data; Provider; Payment date
+The contents and source of each data category is given below:
+
+
+USERS DATA:
+* Contents: Name; Date of Birth; Company; Email; Address
+* Source: AWS Cloud (Postgres Database)
+ 
+PAYMENT CARD DATA:
+* Contents: Card number; Expiry data; Provider; Payment date
+* Source: AWS S3 (PDF document)
 
 
