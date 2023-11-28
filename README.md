@@ -29,5 +29,6 @@ The contents and source of each data category is given below:
 * Source: AWS S3 (PDF document)
 
 **3. Stores data:**
-* Contents: Address; Coordinates (Lat, Long); Locality; Staff numbers; Type; Country code; Continent
+* Contents: Address; Geographic coordinates (Lat, Long); Locality; Staff numbers; Type; Country code; Continent
+* Source: restful-API
 
