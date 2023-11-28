@@ -2,7 +2,7 @@
 
 ## Table of contents:
 1. About
-2. Processing
+2. Data contents and sources
 3. Usage instructions
 4. File structure
 5. License information
@@ -15,7 +15,7 @@ So, in the first phase, the data was extracted rom those sources, cleaned, and c
 
 In the second phase
 
-## 2. Processing
+## 2. Data contents and sources
 
 The contents and source of each data category is given below:
 
