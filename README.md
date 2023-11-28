@@ -9,8 +9,16 @@
 
 ## 1. About
 
-This project assumes sales data of a multinational organisation spread across different sources. This made analysis difficult. So, the aim was to extract the data from those sources, clean, and centralise in a single database.
+This project assumes sales data of a multinational organisation spread across different sources. This made analysis difficult.
+
+So, in the first phase, the data was extracted rom those sources, cleaned, and centralised in a single SQL database.
+
+In the second phase
 
 ## 2. Processing
+
+DATA CATEGORY           CONTENTS                                          SOURCE
+Users data              Name; Date of Birth; Company; Email; Address      AWS Cloud (Postgres Database)
+Payment card data       Card number; Expiry data; Provider; Payment date
 
 
