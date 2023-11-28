@@ -20,11 +20,11 @@ In the second phase
 The contents and source of each data category is given below:
 
 
-**Users data:**
+**1. Users data:**
 * Contents: Name; Date of Birth; Company; Email; Address
 * Source: AWS Cloud (Postgres Database)
  
-**Payment card data**:
+**2. Payment card data**:
 * Contents: Card number; Expiry data; Provider; Payment date
 * Source: AWS S3 (PDF document)
 
