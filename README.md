@@ -2,13 +2,15 @@
 
 ## Table of contents:
 1. About
-2. Installation instructions
+2. Processing
 3. Usage instructions
 4. File structure
 5. License information
 
 ## 1. About
 
-Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
+This project assumes sales data of a multinational organisation spread across different sources. This made analysis difficult. So, the aim was to extract the data from those sources, clean, and centralise in a single database.
 
-This is an implementation of the Hangman game, where the computer thinks of a word and the user tries to guess it. 
+## 2. Processing
+
+
