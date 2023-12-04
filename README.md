@@ -19,9 +19,8 @@ In the second phase
 
 The contents and source of each data category is given below:
 
-
 **1. Users data:**
-* Contents: Name; Date of Birth; Company; Email; Address
+* Contents: Name; Date of Birth; Company; Email; Address; Country, Country code, Phone number, Join date, User UUID
 * Source: AWS Cloud (Postgres Database)
  
 **2. Payment card data:**
@@ -31,4 +30,12 @@ The contents and source of each data category is given below:
 **3. Stores data:**
 * Contents: Address; Geographic coordinates (Lat, Long); Locality; Staff numbers; Type; Country code; Continent
 * Source: restful-API
+
+**4. Products data:**
+* Contents: Product name; Price; Weight; Weight class; Category; EAN; Date added; UUID; Availabilty; Code
+* Source: AWS S3
+
+**5. Orders data:**
+* Contents: Date UUID; User UUID; Card number; Store code; Product code; Product quantity
+* Source: AWS Cloud (Postgres Database)
 
