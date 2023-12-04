@@ -14,9 +14,13 @@ This project assumes sales data of a multinational organisation spread across di
 It was carried out in 3 ETL phases:
 
 **Phase 1: Data (E)xtraction from different sources**
+
 In this phase, the data was extracted using various python-based tools:
+
 YAML:     Reads credentials from YAML format file);
+
 psycopg2: Connects to the PostgreSQL remote database;
+
 sqlalchemy:
 
 
