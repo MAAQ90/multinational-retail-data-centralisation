@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import yaml
 import pandas as pd
 from sqlalchemy import create_engine
@@ -7,6 +5,7 @@ from sqlalchemy import inspect
 import tabula
 import requests
 import boto3
+import concurrent.futures
 
 class DataExtractor:
 
@@ -19,6 +18,7 @@ class DataExtractor:
               return pd.read_sql_table(table_name, connection)
 
     def retrieve_pdf_data(self, url):
+        print('RETIEVE PDF DATA FUNCTION CALLED')
         return pd.concat(tabula.read_pdf(url, pages="all"))
 
     def x_api_key(self):
@@ -29,15 +29,25 @@ class DataExtractor:
         header = self.x_api_key()
         response = requests.get(url, headers=header)
         return response.json()['number_stores']
+    
+    def retrieve_store_data(self, store_number):
+        url = f'https://aqj7u5id95.execute-api.eu-west-1.amazonaws.com/prod/store_details/{store_number}'
+        header = self.x_api_key()
+        response = requests.get(url, headers=header)
+        return pd.json_normalize(response.json())
 
-    def retrieve_stores_data(self, number_of_stores):
-        df_storesdata = []
-        for store_number in range(number_of_stores):
-            url = f'https://aqj7u5id95.execute-api.eu-west-1.amazonaws.com/prod/store_details/{store_number}'
-            header = self.x_api_key()
-            response = requests.get(url, headers=header)
-            df_storesdata.append(pd.json_normalize(response.json()))
-        return pd.concat(df_storesdata)
+    def retrieve_all_stores_data(self, number_of_stores):
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            results = list(executor.map(self.retrieve_store_data, range(number_of_stores)))
+        df_storesdata = pd.concat(results)
+        return df_storesdata
+    
+    def process_all_stores(self):
+        number_of_stores = self.list_number_of_stores()
+        df_all_stores = self.retrieve_all_stores_data(number_of_stores)
+        # Process the concatenated DataFrame as needed
+        return df_all_stores
+        
 
     def extract_from_s3(self):
         s3 = boto3.client('s3')
