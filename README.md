@@ -9,11 +9,21 @@
 
 ## 1. About
 
-This project assumes sales data of a multinational organisation spread across different sources. This made analysis difficult.
+This project assumes sales data of a multinational organisation spread across different sources, which analysis difficult for the business. Therefore, it aims to centralise all the data in a single open-source database.
 
-So, in the first phase, the data was extracted rom those sources, cleaned, and centralised in a single SQL database.
+It was carried out in 3 ETL phases:
 
-In the second phase
+**Phase 1: Data (E)xtraction from different sources**
+In this phase, the data was extracted using various python-based tools:
+YAML:     Reads credentials from YAML format file);
+psycopg2: Connects to the PostgreSQL remote database;
+sqlalchemy:
+
+
+* Phase 2: Data (T)ransformation (cleaning, reformatting, etc).
+* Phase 3: Data (L)oading (into centralised database).
+
+psycopg2 to connect to the PostgreSQL local pgadmin database;
 
 ## 2. Data contents and sources
 
