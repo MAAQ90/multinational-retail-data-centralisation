@@ -8,9 +8,9 @@
 
 ## 1. About
 
-This project assumes sales data of a multinational organisation spread across different sources, which analysis difficult for the business. Therefore, it aims to centralise all the data in a single open-source database.
+This project assumes sales data of a multinational organisation spread across different sources, which makes analysis difficult for the business. Therefore, it aims to centralise all the data in a single open-source (SQL) database.
 
-It was carried out in 3 ETL phases:
+It was carried out in 3 ETL phases and 1 SQL based phase:
 
 **Phase 1: Data (E)xtraction from different sources**
 
@@ -47,6 +47,14 @@ After the tranformation phase, the data is uploaded to the target database(s) or
 - psycopg2;
 
 - SQLAlchemy.
+
+**Phase 4: SQL Star-based Database Schema**
+
+After all the tabulated data has been uploaded to the SQL database, a relationship between them has to be establish to ensure data integrity. The following SQL fields help in doing so:
+
+- Primary Key: This field alots a unique identifier to each record in a table;
+
+- Foreign key: This field makes the reference (to the same data) in another table to establish link between them.
 
 **Additional customised library:**
 
