@@ -18,7 +18,7 @@ This project assumes sales data of a multinational organisation spread across di
 
 ## 3. Usage instructions
 
-In order to implement the program, it is important to understand what each function does. The procedure is carried out in 3 ETL phases and 1 SQL based phase:
+In order to implement the program, it is important to understand what each function does. The procedure is carried out in 3 ETL phases and 1 SQL based phase. A brief explanation of each phase is as follows:
 
 **Phase 1: Data (E)xtraction from different sources**
 
