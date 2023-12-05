@@ -17,15 +17,17 @@ It was carried out in 3 ETL phases:
 
 In this phase, the data was extracted using various python-based tools:
 
-YAML:     Reads credentials from YAML format file);
+- YAML: Reads credentials from YAML format file);
 
-psycopg2: Connects to the PostgreSQL remote database;
+- psycopg2: Connects to the PostgreSQL remote database;
 
-sqlalchemy:
+- sqlalchemy: 
 
 
-* Phase 2: Data (T)ransformation (cleaning, reformatting, etc).
-* Phase 3: Data (L)oading (into centralised database).
+**Phase 2: Data (T)ransformation (cleaning, reformatting, etc)**
+
+
+**Phase 3: Data (L)oading (into centralised database)**
 
 psycopg2 to connect to the PostgreSQL local pgadmin database;
 
