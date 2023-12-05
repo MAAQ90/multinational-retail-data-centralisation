@@ -23,13 +23,31 @@ In this phase, the data was extracted using various python-based tools:
 
 - SQLAlchemy: The software library is used to connect to various database systems and execute SQL queries to extract data, and its 'create_engine' function is used in establishing a connection to a database;
 
+- requests: This library helps in making HTTP requests;
+
+- tabula: This library extracts the tables from PDFs into pandas dataframes;
+
+- boto3: Allows the user to interact with the Amazon Web Services (AWS) like S3 for data extraction;
+
+- concurrent.futures: This library helps in parallelization during the extraction process;
+
+- pandas: Helps in establishing dataframe of the extracted data.
 
 **Phase 2: Data (T)ransformation (cleaning, reformatting, etc)**
 
+The transformation phase is the most important, where it is used to clean and uniformly reformat the data, before loading it to the target destination.
+
+- pandas: Play the vital role in cleaning process of the data, e.g., clearing out any 'null' data rows, dropping unnecessary columns, correcting the date/time formats, writing outputs to csv using 'to_csv()' for immediate inspection of data, etc.
 
 **Phase 3: Data (L)oading (into centralised database)**
 
-psycopg2 to connect to the PostgreSQL local pgadmin database;
+After the tranformation phase, the data is uploaded to the target database(s) or a centralised database, where it can readily be analysed. The following python libraries are reused from the extraction phase, to help connect with the desired database(s):
+
+- YAML;
+ 
+- psycopg2;
+
+- SQLAlchemy.
 
 ## 2. Data contents and sources
 
