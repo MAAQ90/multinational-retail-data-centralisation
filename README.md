@@ -3,9 +3,8 @@
 ## Table of contents:
 1. About
 2. Data contents and sources
-3. Usage instructions
-4. File structure
-5. License information
+3. File structure
+4. License information
 
 ## 1. About
 
@@ -76,4 +75,20 @@ The contents and source of each data category is given below:
 **5. Orders data:**
 * Contents: Date UUID; User UUID; Card number; Store code; Product code; Product quantity
 * Source: AWS Cloud (Postgres Database)
+
+## 3. File structure
+
+The program contains the following python coded files:
+
+- database_utils.py: This code creates the engine to establish link with various sourced databases, required during extraction and uploading phases.
+
+- data_extraction: This code retreives data from different sources.
+
+- data_cleaning.py: The code in the file utilises capabilities of 'pandas' library to prepare (tranform) the data for uploading to a central database.
+
+- main.py: This code provides a main ETL interface for systematically calling all the classes/functions stored within above mentioned files.
+
+## License information
+
+Open-source license/code. Restricted access to data sources may apply.
 
