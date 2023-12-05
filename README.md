@@ -49,6 +49,10 @@ After the tranformation phase, the data is uploaded to the target database(s) or
 
 - SQLAlchemy.
 
+**Additional customised library:**
+
+- piplibinstall: This is a custom library that installs all the pre-required libraries, to run the all the processes smoothly. The libraries' information can be obtained from this file, if you need to install them seperately or otherwise.
+
 ## 2. Data contents and sources
 
 The contents and source of each data category is given below:
