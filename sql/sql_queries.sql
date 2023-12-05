@@ -43,7 +43,7 @@ SELECT		store_type,
 		SUM(product_quantity * product_price * 100)/(SUM(SUM(product_quantity * product_price))OVER()) AS percentage_total
 FROM		orders_table
 		JOIN dim_store_details 	ON orders_table.store_code = dim_store_details.store_code
-		JOIN dim_products		ON orders_table.product_code = dim_products.product_code
+		JOIN dim_products	ON orders_table.product_code = dim_products.product_code
 GROUP BY	store_type
 ORDER BY	total_sales DESC;
 
@@ -53,8 +53,8 @@ SELECT		SUM(product_quantity * product_price) AS total_sales,
 		dim_date_times.year,
 		dim_date_times.month
 FROM		orders_table
-		JOIN dim_date_times		ON orders_table.date_uuid = dim_date_times.date_uuid
-		JOIN dim_products		ON orders_table.product_code = dim_products.product_code
+		JOIN dim_date_times	ON orders_table.date_uuid = dim_date_times.date_uuid
+		JOIN dim_products	ON orders_table.product_code = dim_products.product_code
 GROUP BY	YEAR,
 		MONTH
 ORDER BY	total_sales DESC
@@ -75,7 +75,7 @@ SELECT		SUM(product_quantity * product_price) AS total_sales,
 		country_code
 FROM		orders_table
 		JOIN dim_store_details	ON orders_table.store_code = dim_store_details.store_code
-		JOIN dim_products		ON orders_table.product_code = dim_products.product_code
+		JOIN dim_products	ON orders_table.product_code = dim_products.product_code
 WHERE		country_code = 'DE'
 GROUP BY	store_type,
 		country_code
@@ -86,7 +86,7 @@ ORDER BY	total_sales ASC;
 WITH		CTE1_datetime_extract AS
 		(
 		SELECT 		TO_TIMESTAMP(CONCAT(year, '-', month, '-', day, ' ', timestamp), 'YYYY-MM-DD H:M:S') as date_time,
-							year
+				year
 		FROM		dim_date_times
 		ORDER BY	date_time DESC
 		),
