@@ -90,7 +90,7 @@ The contents and source of each data category is given below:
 
 ## 5. File structure
 
-The program contains the following python coded files:
+The program contains the following files:
 
 - database_utils.py: This code creates the engine to establish link with various sourced databases, required during extraction and uploading phases.
 
