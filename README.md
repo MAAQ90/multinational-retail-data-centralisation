@@ -2,19 +2,27 @@
 
 ## Table of contents:
 1. About
-2. Data contents and sources
-3. File structure
-4. License information
+2. Installation instructions
+3. Usage instructions
+4. Data contents and sources
+5. File structure
+6. License information
 
 ## 1. About
 
 This project assumes sales data of a multinational organisation spread across different sources, which makes analysis difficult for the business. Therefore, it aims to centralise all the data in a single open-source (SQL) database.
 
-It was carried out in 3 ETL phases and 1 SQL based phase:
+## 2. Installation instructions
+
+- piplibinstall: This is a custom library that installs all the pre-required libraries, to run the all the processes smoothly. The libraries' information can be obtained from this file, if you need to install them seperately or otherwise.
+
+## 3. Usage instructions
+
+In order to implement the program, it is important to understand what each function does. The procedure is carried out in 3 ETL phases and 1 SQL based phase:
 
 **Phase 1: Data (E)xtraction from different sources**
 
-In this phase, the data was extracted using various python-based tools:
+In this phase, the data is extracted using various python-based tools:
 
 - YAML: Reads credentials from YAML format file;
 
@@ -56,11 +64,7 @@ After all the tabulated data has been uploaded to the SQL database, a relationsh
 
 - Foreign key: This field makes the reference (to the same data) in another table to establish link between them.
 
-**Additional customised library:**
-
-- piplibinstall: This is a custom library that installs all the pre-required libraries, to run the all the processes smoothly. The libraries' information can be obtained from this file, if you need to install them seperately or otherwise.
-
-## 2. Data contents and sources
+## 4. Data contents and sources
 
 The contents and source of each data category is given below:
 
@@ -84,7 +88,7 @@ The contents and source of each data category is given below:
 * Contents: Date UUID; User UUID; Card number; Store code; Product code; Product quantity
 * Source: AWS Cloud (Postgres Database)
 
-## 3. File structure
+## 5. File structure
 
 The program contains the following python coded files:
 
@@ -96,7 +100,7 @@ The program contains the following python coded files:
 
 - main.py: This code provides a main ETL interface for systematically calling all the classes/functions stored within above mentioned files.
 
-## License information
+## 6. License information
 
 Open-source license/code. Restricted access to data sources may apply.
 
