@@ -1,4 +1,4 @@
-# Multinational Retail Data Centralistaion
+# Multinational Retail Data Centralisation
 
 ## Table of contents:
 1. About
