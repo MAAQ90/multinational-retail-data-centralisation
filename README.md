@@ -12,6 +12,8 @@
 
 This project assumes sales data of a multinational organisation spread across different sources, which makes analysis difficult for the business. Therefore, it aims to centralise all the data in a single open-source (SQL) database.
 
+![mrdc](./mrdc.png)
+
 ## 2. Installation instructions
 
 - piplibinstall: This is a custom library that installs all the pre-required libraries, to run the all the processes smoothly. The libraries' information can be obtained from this file, if you need to install them seperately or otherwise.
